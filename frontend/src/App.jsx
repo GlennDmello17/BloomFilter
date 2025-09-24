@@ -8,7 +8,7 @@ function App() {
   const [result, setResult] = useState('')
   async function handleUpload() {
 
-    const result = await fetch('http://localhost:3000/add-username', {
+    const result = await fetch('https://bloomfilter.onrender.com/add-username', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
