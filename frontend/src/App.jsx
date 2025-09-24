@@ -6,9 +6,10 @@ import './App.css'
 function App() {
   const [username, setUsername] = useState("")
   const [result, setResult] = useState('')
+  const apiUrl = import.meta.env.VITE_API_URL;
   async function handleUpload() {
 
-    const result = await fetch('https://bloomfilter.onrender.com/add-username', {
+    const result = await fetch(`${apiUrl}`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
