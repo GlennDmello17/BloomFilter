@@ -8,7 +8,7 @@ function App() {
   const [result, setResult] = useState('')
   const apiUrl = import.meta.env.VITE_API_URL;
   async function handleUpload() {
-
+    setResult("Loading...");
     const result = await fetch(`${apiUrl}`, {
       method: 'POST',
       headers: {
@@ -75,6 +75,8 @@ function App() {
             Result:{" "}
             {result === "Username added successfully" ? (
               <span style={{ color: "green" }}>{result}</span>
+            ) : result === "Loading..." ? (
+              <span style={{ color: "orange" }}>{result}</span>
             ) : (
               <span style={{ color: "red" }}>{result}</span>
             )}
